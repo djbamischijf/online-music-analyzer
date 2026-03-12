@@ -1,5 +1,5 @@
 import json
-with open('spotify_data.json', 'r') as f:
+with open('sample_spotify_data.json', 'r') as f:
     spotify_data = json.load(f)
 
 import psycopg2
