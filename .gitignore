@@ -1,3 +1,4 @@
 *.json
+!sample_spotify_data.json
 __pycache__/
 .env

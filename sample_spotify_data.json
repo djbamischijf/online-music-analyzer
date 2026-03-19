@@ -1,41 +1,76 @@
-[ {
-  "endTime" : "2026-03-13 10:50",
-  "artistName" : "The Soundlords",
-  "trackName" : "Off the Wall - Soft Mix",
-  "msPlayed" : 360000
-}, {
-  "endTime" : "2026-03-13 10:57",
-  "artistName" : "Inland Knights",
-  "trackName" : "up the wall",
-  "msPlayed" : 397897
-}, {
-  "endTime" : "2026-03-13 14:00",
-  "artistName" : "Inland Knights",
-  "trackName" : "Ends Don't Meet",
-  "msPlayed" : 369147
-}, {
-  "endTime" : "2026-03-13 14:07",
-  "artistName" : "Inland Knights",
-  "trackName" : "up the wall",
-  "msPlayed" : 397897
-}, {
-  "endTime" : "2026-03-13 14:13",
-  "artistName" : "Inland Knights",
-  "trackName" : "ready",
-  "msPlayed" : 363373
-}, {
-  "endTime" : "2026-03-13 14:18",
-  "artistName" : "Inland Knights",
-  "trackName" : "moody magic",
-  "msPlayed" : 319987
-}, {
-  "endTime" : "2026-03-13 22:15",
-  "artistName" : "Inland Knights",
-  "trackName" : "got to live",
-  "msPlayed" : 5108
-}, {
-  "endTime" : "2026-03-13 22:15",
-  "artistName" : "Jesse Bru",
-  "trackName" : "Sea To Sky",
-  "msPlayed" : 0
-} ]
+[
+  {
+    "ts": "2012-05-11T10:35:23Z",
+    "platform": "Windows 7 (Unknown Ed) SP0 [x86 0]",
+    "ms_played": 33153,
+    "conn_country": "NL",
+    "ip_addr": "145.120.67.33",
+    "master_metadata_track_name": "Call Me Maybe",
+    "master_metadata_album_artist_name": "Carly Rae Jepsen",
+    "master_metadata_album_album_name": "Call Me Maybe",
+    "spotify_track_uri": "spotify:track:5unfeZUhKhICP73CDYBW4N",
+    "episode_name": null,
+    "episode_show_name": null,
+    "spotify_episode_uri": null,
+    "audiobook_title": null,
+    "audiobook_uri": null,
+    "audiobook_chapter_uri": null,
+    "audiobook_chapter_title": null,
+    "reason_start": "clickrow",
+    "reason_end": "popup",
+    "shuffle": false,
+    "skipped": true,
+    "offline": false,
+    "offline_timestamp": null,
+    "incognito_mode": false
+  },
+  {
+    "ts": "2012-05-11T10:38:13Z",
+    "platform": "Windows 7 (Unknown Ed) SP0 [x86 0]",
+    "ms_played": 170494,
+    "conn_country": "NL",
+    "ip_addr": "145.120.67.33",
+    "master_metadata_track_name": "Ni**as In Paris",
+    "master_metadata_album_artist_name": "JAY-Z",
+    "master_metadata_album_album_name": "Watch The Throne",
+    "spotify_track_uri": "spotify:track:1auxYwYrFRqZP7t3s7w4um",
+    "episode_name": null,
+    "episode_show_name": null,
+    "spotify_episode_uri": null,
+    "audiobook_title": null,
+    "audiobook_uri": null,
+    "audiobook_chapter_uri": null,
+    "audiobook_chapter_title": null,
+    "reason_start": "popup",
+    "reason_end": "popup",
+    "shuffle": false,
+    "skipped": true,
+    "offline": false,
+    "offline_timestamp": null,
+    "incognito_mode": false
+  },
+  {
+    "ts": "2012-05-11T10:38:32Z",
+    "platform": "Windows 7 (Unknown Ed) SP0 [x86 0]",
+    "ms_played": 19221,
+    "conn_country": "NL",
+    "ip_addr": "145.120.67.33",
+    "master_metadata_track_name": "Gorillaz Feat. André 3000 - Do Ya Thing (Instrumental Version)",
+    "master_metadata_album_artist_name": "Ultimate Tribute Stars",
+    "master_metadata_album_album_name": "Gorillaz Feat. André 3000 - Do Ya Thing (Instrumental Version)",
+    "spotify_track_uri": "spotify:track:1Mm0XfFMWYhHL4aT1bLtqg",
+    "episode_name": null,
+    "episode_show_name": null,
+    "spotify_episode_uri": null,
+    "audiobook_title": null,
+    "audiobook_uri": null,
+    "audiobook_chapter_uri": null,
+    "audiobook_chapter_title": null,
+    "reason_start": "popup",
+    "reason_end": "popup",
+    "shuffle": false,
+    "skipped": true,
+    "offline": false,
+    "offline_timestamp": null,
+    "incognito_mode": false
+  }]
