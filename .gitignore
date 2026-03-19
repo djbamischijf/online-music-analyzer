@@ -1,2 +1,3 @@
-spotify_data_personal.json
-.DS_Store
+*.json
+__pycache__/
+.env
