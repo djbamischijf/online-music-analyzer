@@ -2,6 +2,7 @@ import json
 import psycopg2
 import glob
 
+# --- Load JSON files ---
 spotify_data = []
 for filepath in glob.glob('Streaming_History_Audio_*.json'):
     with open(filepath, 'r') as f:
@@ -11,6 +12,7 @@ for filepath in glob.glob('Streaming_History_Audio_*.json'):
 
 print(f"Total plays loaded: {len(spotify_data)}")
 
+# --- Connect to database ---
 conn = psycopg2.connect(
     dbname='music_habits',
     user='timofranssen',
@@ -21,6 +23,7 @@ conn = psycopg2.connect(
 cursor = conn.cursor()
 print('Connected!')
 
+# --- Create tables ---
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS artists (
         artist_id SERIAL PRIMARY KEY,
@@ -57,12 +60,14 @@ cursor.execute("""
 conn.commit()
 print("Tables ready!")
 
+# --- Empty tables in case they already exist ---
 cursor.execute("TRUNCATE TABLE listening_history RESTART IDENTITY CASCADE")
 cursor.execute("TRUNCATE TABLE tracks RESTART IDENTITY CASCADE")
 cursor.execute("TRUNCATE TABLE artists RESTART IDENTITY CASCADE")
 conn.commit()
 print("Tables emptied!")
 
+# --- Insert artists ---
 artist_names = set()
 for song in spotify_data:
     if song['master_metadata_album_artist_name']:  # can be null for podcasts
@@ -76,6 +81,7 @@ for artist_name in artist_names:
 conn.commit()
 print(f"Artists inserted: {len(artist_names)}")
 
+# --- Insert tracks ---
 tracks = set()
 for song in spotify_data:
     if song['master_metadata_track_name'] and song['master_metadata_album_artist_name']:
@@ -95,6 +101,7 @@ for artist_name, track_title, spotify_uri in tracks:
 conn.commit()
 print(f"Tracks inserted: {len(tracks)}")
 
+# --- Insert listening history ---
 for play in spotify_data:
     if not play['master_metadata_track_name'] or not play['master_metadata_album_artist_name']:
         continue  # skip podcasts/audiobooks
