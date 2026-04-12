@@ -3,3 +3,4 @@
 __pycache__/
 .env
 spotify_plays.csv*.csv
+*.csv
