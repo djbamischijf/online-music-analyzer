@@ -2,3 +2,4 @@
 !sample_spotify_data.json
 __pycache__/
 .env
+spotify_plays.csv*.csv
