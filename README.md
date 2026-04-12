@@ -9,9 +9,9 @@
 
 ## Data pipeline
 
-1. **Spotify GDPR export** — raw JSON files with full streaming history
+1. **Spotify export** — JSON files with full streaming history
 2. **Python (`load_spotify.py`)** — loads and structures the data into PostgreSQL
-3. **PostgreSQL** — stores the data in a relational schema (artists, tracks, listening_history)
+3. **PostgreSQL** — stores the data in different tables (artists, tracks, listening_history)
 4. **SQL (`export_for_dashboard.sql`)** — joins the tables and exports a single table as CSV
 5. **Tableau** — dashboard with visualizations
 
