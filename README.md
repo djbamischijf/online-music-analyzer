@@ -1,40 +1,36 @@
-# Spotify Listening History Analyzer
+## TODO
+- [ ] Favorite songs by minutes listened
+- [ ] Determine genre of songs via Spotify API. Then determine favorite genre per time of the day to do different music recommendations depending on the time of day.
+- [ ] Filter out plays under 30 seconds
 
-A personal project that loads my full Spotify streaming history into a PostgreSQL database and analyzes my listening habits.
+## Dashboard
 
-## What it does
+[View the interactive dashboard on Tableau Public](https://public.tableau.com/views/SpotifyLuistergedrag/Spotifyluistergedrag2011-2026)
 
-- Loads my full Spotify streaming history (multiple years, multiple JSON files) into a PostgreSQL database
-- Structures the data into artists, tracks and play history — including timestamps, play duration, skips and shuffle state
-- Analyzes and visualizes the data with Python and matplotlib
+## Data pipeline
 
-## Analysis
-
-So far:
-- Top 10 most played artists (bar chart)
-
-Things I want to add:
-- Favorite songs by play count
-- Listening time per artist
-- Time of day listening patterns
-- Genre breakdown via Spotify API
+1. **Spotify GDPR export** — raw JSON files with full streaming history
+2. **Python (`load_spotify.py`)** — loads and structures the data into PostgreSQL
+3. **PostgreSQL** — stores the data in a relational schema (artists, tracks, listening_history)
+4. **SQL (`export_for_dashboard.sql`)** — joins the tables and exports a single table as CSV
+5. **Tableau** — dashboard with visualizations
 
 ## Tech stack
 
-- **Python** — data loading and analysis
+- **Python** — data loading (psycopg2)
 - **PostgreSQL** — data storage
-- **psycopg2** — Python/PostgreSQL connection
-- **matplotlib** — data visualization
-- **Spotify GDPR export** — data source
+- **SQL** — data transformation and analysis
+- **Tableau** — dashboarding and visualization
+- **matplotlib** — additional analysis
 
 ## How to run it yourself
 
 ### 1. Get your Spotify data
-You can request your extended streaming history at [spotify.com/account/privacy](https://www.spotify.com/account/privacy/). 
-It takes up to 30 days (for me it took much shorter tho). You'll get a few of JSON files named like `Streaming_History_Audio_2023_0.json`.
+You can request your extended streaming history at [spotify.com/account/privacy](https://www.spotify.com/account/privacy/).
+It takes up to 30 days (for me it took much shorter tho). You'll get a few JSON files named like `Streaming_History_Audio_2023_0.json`.
 
 ### 2. Set up PostgreSQL
-You'll need PostgreSQL running locally with a database called `music_habits`. 
+You'll need PostgreSQL running locally with a database called `music_habits`.
 Update the connection details in the scripts to match your setup.
 
 ### 3. Install dependencies
@@ -48,10 +44,13 @@ Drop your Spotify JSON files in the project folder and run:
 python3 load_spotify.py
 ```
 
-### 5. Run the analysis
+### 5. Export for dashboard
+Run the query in `export_for_dashboard.sql` in DBeaver and export the result as CSV.
+
+### 6. Run the analysis
 ```bash
-python3 analyse_spotify.py
+python3 analyse_history.py
 ```
 
-## Note on data privacy
-My Spotify JSON files are gitignored so no personal data is uploaded here, just the code.
+## Note on personal data
+My Spotify JSON files are not included in this repository.
